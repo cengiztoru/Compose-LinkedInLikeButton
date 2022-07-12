@@ -10,9 +10,11 @@ import androidx.compose.ui.unit.dp
 import com.cengiztoru.linkedindashboard.R
 
 @Composable
-fun Reactions() {
+fun Reactions(
+    modifier: Modifier = Modifier,
+) {
     Row(
-        modifier = Modifier.padding(start = 8.dp, end = 8.dp),
+        modifier = modifier.then(Modifier.padding(start = 8.dp, end = 8.dp)),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
