@@ -9,14 +9,16 @@ import androidx.compose.ui.tooling.preview.Preview
 fun ReactionDialog(
     expanded: Boolean,
     modifier: Modifier = Modifier,
-    onDismissRequest: () -> Unit
+    onDismissRequest: (selectedReactionType: ReactionType?) -> Unit
 ) {
     DropdownMenu(
         modifier = modifier,
         expanded = expanded,
-        onDismissRequest = onDismissRequest,
+        onDismissRequest = { onDismissRequest(null) }
     ) {
-        Reactions()
+        Reactions { selectedReaction ->
+            onDismissRequest(selectedReaction)
+        }
     }
 }
 
@@ -25,6 +27,6 @@ fun ReactionDialog(
 fun ReactionDialogPreview() {
     ReactionDialog(
         expanded = true,
-        onDismissRequest = { },
+        onDismissRequest = { _ -> }
     )
 }
