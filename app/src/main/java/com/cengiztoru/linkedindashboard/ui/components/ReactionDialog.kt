@@ -1,5 +1,6 @@
 package com.cengiztoru.linkedindashboard.ui.components
 
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.DropdownMenu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,7 +13,7 @@ fun ReactionDialog(
     onDismissRequest: (selectedReactionType: ReactionType?) -> Unit
 ) {
     DropdownMenu(
-        modifier = modifier,
+        modifier = modifier.wrapContentSize(),
         expanded = expanded,
         onDismissRequest = { onDismissRequest(null) }
     ) {
